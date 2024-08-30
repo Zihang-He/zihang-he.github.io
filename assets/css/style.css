@@ -938,8 +938,34 @@ main {
   gap: 30px;
   margin-bottom: 10px;
 }
+ul {
+  /* This creates the multi-column layout */
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3;    /* Firefox */
+  column-count: 3;
 
-.project-item { display: none; }
+  -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+  -moz-column-gap: 20px;    /* Firefox */
+  column-gap: 20px;         /* Gap between columns */
+
+  /* Optional, to control the width and centering of the overall container */
+  width: 100%;
+  max-width: 1200px; /* Or whatever maximum width you want */
+  margin: 0 auto;    /* This centers the container */
+}
+
+.project-item {
+  /* Prevents items from being split across columns */
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+  page-break-inside: avoid;            /* Firefox */
+  break-inside: avoid-column;
+
+  /* Optional, if you want spacing between items in the same column */
+  margin-bottom: 20px; 
+
+  /* Optional, to control the display of the item */
+  width: 100%; /* Each item will take up the full width of the column */
+}
 
 .project-item.active {
   display: block;
@@ -1388,6 +1414,14 @@ textarea.form-input::-webkit-resizer { display: none; }
   .about .article-title { margin-bottom: 20px; }
 
   .about-text { margin-bottom: 40px; }
+
+  .resume .article-title { margin-bottom: 20px; }
+
+  .resume-text { margin-bottom: 40px; }
+
+  .drawings .article-title { margin-bottom: 20px; }
+
+  .drawings-text { margin-bottom: 40px; }
 
   /* service */
 
